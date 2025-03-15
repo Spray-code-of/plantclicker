@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#C79603">
+    <title>Crop Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://integration.gamepix.com/sdk/v3/gamepix.sdk.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="top">
+            <div class="score-stuff">
+                <p>Plants:</p>
+                <p id="score"></p>
+            </div>
+        </div>
+        <div class="middle">
+            <i class="fa-solid fa-gear" id="leaf-bg"></i>
+            <i class="fa-solid fa-leaf" id="leaf"></i>
+        </div>
+        <div class="bottom">
+            <i class="fa-solid fa-store" id="store-icon"></i>
+        </div>
+        <div id="banner-container" style="width: 300px; height: 250px"></div>
+        <div id="shop-overlay"></div>
+        <div id="store">
+
+            <div class="ad-toggler item" style="background-color: rgb(195, 255, 0);" onclick="toggleRewardAd()">
+                <i class="fa-solid fa-clapperboard"></i>
+                <h1>Ad</h1>
+                <p>+100 plants</p>
+
+                <h2>Cost: 1 ad</h2>
+            </div>
+            <div class="add-click item" data-value="1" data-price="500">
+                <img src="./worm.png" alt="">
+                <h1>Worm</h1>
+                <p>+1 plant per click</p>
+
+                <h2>Cost: 500</h2>
+            </div>
+            <div class="add-click item" data-value="2" data-price="1000">
+                <img src="./compost.png" alt="">
+                <h1>Composter</h1>
+                <p>+2 plants per click</p>
+
+                <h2>Cost: 1k</h2>
+            </div>
+            <div class="auto-click item" data-value="1" data-price="2000">
+                <img src="./farmer.png" alt="">
+                <h1>Farmer</h1>
+                <p>+1 plants per Sec</p>
+
+                <h2>Cost: 2k</h2>
+            </div>
+            <div class="add-click item" data-value="5" data-price="7000">
+                <img src="./fertilizer.png" alt="">
+                <h1>Fertiliser</h1>
+                <p>+5 plants per click</p>
+
+                <h2>Cost: 7k</h2>
+            </div>
+            <div class="add-click item" data-value="10" data-price="20000">
+                <img src="./tractor.png" alt="">
+                <h1>Tractor</h1>
+                <p>+10 plants per click</p>
+
+                <h2>Cost: 20k</h2>
+            </div>
+            <div class="auto-click item" data-value="20" data-price="100000">
+                <img src="./autotracter.png" alt="">
+                <h1>auto Tractor</h1>
+                <p>+20 plants per sec</p>
+
+                <h2>Cost: 100k</h2>
+            </div>
+            <div class="auto-click item" data-value="2000" data-price="1000000000">
+                <img src="./ai.png" alt="">
+                <h1>ai</h1>
+                <p>+2k plants per sec</p>
+
+                <h2>Cost: 1B</h2>
+            </div>
+        </div>
+    </div>
+    <div id="alert-overlay">
+    </div>
+    <div id="alert" onclick="toggleRewardAd()">
+        <h1>Not Enough Gold</h1>
+        <button id="adbtn">
+            <i class="fa-solid fa-clapperboard"></i>
+        </button>
+        <h2>Watch Ad to get 100 plants</h2>
+    </div>
+    </div>
+
+</body>
+
+</html>

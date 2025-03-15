@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .5s;
+    font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    background-color: #03c74e;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.top {
+    height: 15vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.score-stuff {
+    display: flex;
+    flex-direction: column;
+}
+
+#score {
+    white-space: nowrap;
+    text-overflow: clip;
+    width: 90vw;
+}
+
+.middle {
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#leaf {
+    font-size: 8rem;
+    cursor: pointer;
+    z-index: 21;
+}
+
+#leaf-bg {
+    position: absolute;
+    z-index: 20;
+    font-size: 16rem;
+    cursor: pointer;
+    animation: spin 5s linear infinite;
+    color: green;
+}
+
+@keyframes spin {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#leaf:hover {
+    height: 22vh;
+}
+
+#leaf:active {
+    height: 26vh;
+}
+
+#store-icon {
+    cursor: pointer;
+    height: 5rem;
+}
+
+#store-icon:hover {
+    height: 5.5rem;
+}
+
+.bottom {
+    height: 14vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bottom {
+    height: 8vh;
+    background: none;
+    border: none;
+    font-size: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.bottom i {
+    height: 8vh;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.bottom i:hover {
+    font-size: 3rem;
+}
+
+#store {
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 100vw;
+    background-color: #353535;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+#store.active {
+    top: 60%;
+}
+
+#shop-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
+
+#shop-overlay.active {
+    display: block;
+}
+
+#store .item {
+    height: 250px;
+    width: 170px;
+    background-color: rgb(4, 96, 18);
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 25px;
+    z-index: 53;
+    text-transform: capitalize;
+}
+
+#store .item i {
+    font-size: 5rem;
+}
+
+#store .item img {
+    width: 90%;
+    height: auto;
+}
+
+#store .item h1 {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#alert {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 600;
+    background-color: rgb(32, 32, 32);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#alert p {
+    font-size: 4rem;
+}
+
+#alert-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    z-index: 90;
+}
+
+#alert.active {
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+}
+
+#alert-overlay.active {
+    display: block;
+}
+
+#alert #adbtn {
+    font-size: 3rem;
+    background-color: transparent;
+    border: none;
+    color: yellow;
+}
+
+#alert h2 {
+    font-size: 1rem;
+}
